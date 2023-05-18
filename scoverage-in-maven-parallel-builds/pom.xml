@@ -17,18 +17,26 @@
     </license>
   </licenses>
 
+  <modules>
+    <module>module-a</module>
+    <module>module-b</module> <!-- Module with slow test -->
+    <module>module-c</module>
+  </modules>
+
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <encoding>UTF-8</encoding>
-    <scala.version>3.2.2</scala.version>
-    <scala.compat.version>3</scala.compat.version>
+    <scala.version>2.13.10</scala.version>
+    <scala.compat.version>2.13</scala.compat.version>
+
+    <scoverage.plugin.version>1.4.11</scoverage.plugin.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.scala-lang</groupId>
-      <artifactId>scala3-library_${scala.compat.version}</artifactId>
+      <artifactId>scala-library</artifactId>
       <version>${scala.version}</version>
     </dependency>
     <dependency>
@@ -40,6 +48,8 @@
   </dependencies>
 
   <build>
+    <sourceDirectory>${basedir}/src/main/scala</sourceDirectory>
+
     <plugins>
       <plugin>
         <groupId>net.alchim31.maven</groupId>
@@ -90,9 +100,11 @@
         <version>2.36.0</version>
         <configuration>
           <scala>
-            <version>${scala.version}</version>
-            <file>${project.basedir}/.scalafmt.conf</file>
-            <scalaMajorVersion>${scala.compat.version}</scalaMajorVersion>
+            <scalafmt>
+              <version>3.7.3</version>
+              <file>${session.executionRootDirectory}/.scalafmt.conf</file>
+              <scalaMajorVersion>${scala.compat.version}</scalaMajorVersion>
+            </scalafmt>
           </scala>
         </configuration>
         <executions>
@@ -102,6 +114,14 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.scoverage</groupId>
+        <artifactId>scoverage-maven-plugin</artifactId>
+        <version>${scoverage.plugin.version}</version>
+        <configuration>
+          <scalaVersion>2.13.8</scalaVersion>
+        </configuration>
       </plugin>
     </plugins>
   </build>

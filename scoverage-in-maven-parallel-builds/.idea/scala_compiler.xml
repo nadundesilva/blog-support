@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="scoverage-in-maven-parallel-builds">
+    <profile name="Maven 1" modules="module-a,module-b,module-c,scoverage-in-maven-parallel-builds">
       <option name="implicitConversions" value="true" />
     </profile>
   </component>
