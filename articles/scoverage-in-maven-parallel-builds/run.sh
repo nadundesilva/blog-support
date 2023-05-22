@@ -1,6 +1,9 @@
 #!/bin/bash
 
+set -e
+
 OUTPUT_DIR="./test-coverage"
+rm -rf "${OUTPUT_DIR}"
 mkdir -p "${OUTPUT_DIR}"
 
 mvn clean

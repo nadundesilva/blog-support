@@ -16,11 +16,16 @@ jobs:
       matrix:
         project:
           - scoverage-in-maven-parallel-builds
+          - power-up-your-scala-code-with-implicit-conversions
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - uses: actions/setup-java@v3
+        with:
+          distribution: adopt
+          java-version: '17'
       - name: Build
-        working-directory: ${{ matrix.project }}
+        working-directory: articles/${{ matrix.project }}
         run: ./run.sh

@@ -24,8 +24,8 @@
   </modules>
 
   <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <encoding>UTF-8</encoding>
     <scala.version>2.13.10</scala.version>
     <scala.compat.version>2.13</scala.compat.version>
@@ -102,7 +102,8 @@
           <scala>
             <scalafmt>
               <version>3.7.3</version>
-              <file>${session.executionRootDirectory}/.scalafmt.conf</file>
+              <!--suppress UnresolvedMavenProperty -->
+              <file>${maven.multiModuleProjectDirectory}/.scalafmt.conf</file>
               <scalaMajorVersion>${scala.compat.version}</scalaMajorVersion>
             </scalafmt>
           </scala>
@@ -110,7 +111,7 @@
         <executions>
           <execution>
             <goals>
-              <goal>check</goal>
+              <goal>apply</goal>
             </goals>
           </execution>
         </executions>
