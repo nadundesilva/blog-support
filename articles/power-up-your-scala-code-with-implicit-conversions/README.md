@@ -1,6 +1,6 @@
 # [WIP] Power Up your Scala code with Implicit Conversions
 
-Blog Article -
+[View Blog Article]()
 
 ## Pre-requisites
 
