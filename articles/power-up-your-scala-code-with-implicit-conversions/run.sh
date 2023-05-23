@@ -2,5 +2,10 @@
 
 set -e
 
-mvn clean package
+mvn clean package verify
+
+echo
+echo "Running Sample"
+echo
+
 java -jar ./target/app.jar

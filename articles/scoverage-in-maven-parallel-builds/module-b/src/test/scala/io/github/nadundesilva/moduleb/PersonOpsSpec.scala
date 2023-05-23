@@ -43,4 +43,5 @@ class PersonOpsSpec extends AnyFlatSpec with Matchers {
     val henry = Person(name = "Henry", residingCity = "Colombo, Sri Lanka", birthCity = "Colombo, Sri Lanka")
     henry.changeName("") shouldBe henry
   }
+
 }

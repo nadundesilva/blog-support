@@ -68,4 +68,5 @@ class IntOpsSpec extends AnyFlatSpec with Matchers {
     9 divideBy -3 shouldBe -3
     -49 divideBy 7 shouldBe -7
   }
+
 }

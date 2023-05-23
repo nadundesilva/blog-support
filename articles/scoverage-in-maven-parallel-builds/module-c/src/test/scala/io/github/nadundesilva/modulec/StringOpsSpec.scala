@@ -55,4 +55,5 @@ class StringOpsSpec extends AnyFlatSpec with Matchers {
       "scala rocks" startingFrom 100
     }
   }
+
 }
