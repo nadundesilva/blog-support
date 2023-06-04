@@ -2,6 +2,10 @@
 
 set -e
 
+echo
+echo "Building Sample"
+echo
+
 mvn clean package verify
 
 echo
