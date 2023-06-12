@@ -1,6 +1,6 @@
-# [WIP] Power Up your Scala code with Implicit Conversions
+# Power Up your Scala code with Implicit Conversions
 
-[View Blog Article]()
+[View Blog Article](https://faun.pub/power-up-your-scala-code-with-implicit-conversions-b23e3c04643a)
 
 ## Pre-requisites
 
