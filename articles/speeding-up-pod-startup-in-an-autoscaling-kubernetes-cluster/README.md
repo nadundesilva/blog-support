@@ -4,4 +4,4 @@
 
 ## Pre-requisites
 
-* Kubernetes Cluster (v1.26.3)
+- Kubernetes Cluster (v1.26.3)

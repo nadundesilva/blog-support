@@ -24,13 +24,11 @@
   </modules>
 
   <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
     <encoding>UTF-8</encoding>
-    <scala.version>2.13.10</scala.version>
+    <scala.version>2.13.16</scala.version>
     <scala.compat.version>2.13</scala.compat.version>
-
-    <scoverage.plugin.version>1.4.11</scoverage.plugin.version>
   </properties>
 
   <dependencies>
@@ -42,7 +40,7 @@
     <dependency>
       <groupId>org.scalatest</groupId>
       <artifactId>scalatest_${scala.compat.version}</artifactId>
-      <version>3.2.16</version>
+      <version>3.2.19</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -54,11 +52,9 @@
       <plugin>
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
-        <version>4.8.1</version>
+        <version>4.9.5</version>
         <configuration>
-          <args>
-            <arg>-language:implicitConversions</arg>
-          </args>
+          <scalaVersion>${scala.version}</scalaVersion>
         </configuration>
         <executions>
           <execution>
@@ -72,7 +68,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.21.0</version>
+        <version>3.5.3</version>
         <configuration>
           <skipTests>true</skipTests>
         </configuration>
@@ -80,7 +76,7 @@
       <plugin>
         <groupId>org.scalatest</groupId>
         <artifactId>scalatest-maven-plugin</artifactId>
-        <version>2.0.0</version>
+        <version>2.2.0</version>
         <configuration>
           <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
           <filereports>TestSuiteReport.txt</filereports>
@@ -95,23 +91,18 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>com.diffplug.spotless</groupId>
-        <artifactId>spotless-maven-plugin</artifactId>
-        <version>2.36.0</version>
+        <groupId>org.antipathy</groupId>
+        <artifactId>mvn-scalafmt_${scala.compat.version}</artifactId>
+        <version>1.0.4</version>
         <configuration>
-          <scala>
-            <scalafmt>
-              <version>3.7.3</version>
-              <!--suppress UnresolvedMavenProperty -->
-              <file>${maven.multiModuleProjectDirectory}/.scalafmt.conf</file>
-              <scalaMajorVersion>${scala.compat.version}</scalaMajorVersion>
-            </scalafmt>
-          </scala>
+          <validateOnly>true</validateOnly>
+          <configLocation>${maven.multiModuleProjectDirectory}/.scalafmt.conf</configLocation>
         </configuration>
         <executions>
           <execution>
+            <phase>validate</phase>
             <goals>
-              <goal>check</goal>
+              <goal>format</goal>
             </goals>
           </execution>
         </executions>
@@ -119,9 +110,9 @@
       <plugin>
         <groupId>org.scoverage</groupId>
         <artifactId>scoverage-maven-plugin</artifactId>
-        <version>${scoverage.plugin.version}</version>
+        <version>2.1.0</version>
         <configuration>
-          <scalaVersion>2.13.8</scalaVersion>
+          <scalaVersion>${scala.version}</scalaVersion>
         </configuration>
       </plugin>
     </plugins>

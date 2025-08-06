@@ -4,5 +4,5 @@
 
 ## Pre-requisites
 
-* Apache Maven 3.6.3+
-* Java 17+
+- Apache Maven 3.6.3+
+- Java 17+
