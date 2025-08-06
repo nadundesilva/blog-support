@@ -30,7 +30,7 @@
     <scala.version>2.13.10</scala.version>
     <scala.compat.version>2.13</scala.compat.version>
 
-    <scoverage.plugin.version>1.4.11</scoverage.plugin.version>
+    <scoverage.plugin.version>2.1.0</scoverage.plugin.version>
   </properties>
 
   <dependencies>
