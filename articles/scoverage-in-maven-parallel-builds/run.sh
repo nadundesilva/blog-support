@@ -11,7 +11,7 @@ echo "Running Tests with unsafe goals"
 echo
 
 mvn clean
-mvn -T 1C -Dscoverage.aggregateOnly=true  scoverage:report
+mvn -T 1C -Dscoverage.aggregateOnly=true scoverage:report
 cp -r ./target/site/scoverage "${OUTPUT_DIR}/report"
 
 echo
@@ -20,7 +20,7 @@ echo
 
 mvn clean
 mvn -T 1C scoverage:test
-mvn -Dscoverage.aggregateOnly=true  scoverage:report-only
+mvn -Dscoverage.aggregateOnly=true scoverage:report-only
 cp -r ./target/site/scoverage "${OUTPUT_DIR}/report-fix"
 
 echo

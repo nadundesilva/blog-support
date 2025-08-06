@@ -101,7 +101,6 @@
         <configuration>
           <scala>
             <scalafmt>
-              <version>3.7.3</version>
               <!--suppress UnresolvedMavenProperty -->
               <file>${maven.multiModuleProjectDirectory}/.scalafmt.conf</file>
               <scalaMajorVersion>${scala.compat.version}</scalaMajorVersion>
