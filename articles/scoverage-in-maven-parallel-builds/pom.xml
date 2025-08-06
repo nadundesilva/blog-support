@@ -27,7 +27,7 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <encoding>UTF-8</encoding>
-    <scala.version>2.13.10</scala.version>
+    <scala.version>2.13.16</scala.version>
     <scala.compat.version>2.13</scala.compat.version>
 
     <scoverage.plugin.version>1.4.11</scoverage.plugin.version>
@@ -42,7 +42,7 @@
     <dependency>
       <groupId>org.scalatest</groupId>
       <artifactId>scalatest_${scala.compat.version}</artifactId>
-      <version>3.2.16</version>
+      <version>3.2.19</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -54,7 +54,7 @@
       <plugin>
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
-        <version>4.8.1</version>
+        <version>4.9.5</version>
         <configuration>
           <args>
             <arg>-language:implicitConversions</arg>
@@ -72,7 +72,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.21.0</version>
+        <version>2.22.2</version>
         <configuration>
           <skipTests>true</skipTests>
         </configuration>
@@ -80,7 +80,7 @@
       <plugin>
         <groupId>org.scalatest</groupId>
         <artifactId>scalatest-maven-plugin</artifactId>
-        <version>2.0.0</version>
+        <version>2.2.0</version>
         <configuration>
           <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
           <filereports>TestSuiteReport.txt</filereports>
@@ -97,7 +97,7 @@
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
-        <version>2.36.0</version>
+        <version>2.46.1</version>
         <configuration>
           <scala>
             <scalafmt>
