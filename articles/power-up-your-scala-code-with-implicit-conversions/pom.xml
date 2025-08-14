@@ -77,23 +77,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.antipathy</groupId>
-                <artifactId>mvn-scalafmt_${scala.compat.version}</artifactId>
-                <version>1.0.4</version>
-                <configuration>
-                    <validateOnly>true</validateOnly>
-                    <configLocation>${maven.multiModuleProjectDirectory}/.scalafmt.conf</configLocation>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>format</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 </project>
